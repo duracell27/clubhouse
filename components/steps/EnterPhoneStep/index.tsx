@@ -6,18 +6,18 @@ import { Button } from '../../Button';
 import { StepInfo } from '../../StepInfo';
 
 import styles from './EnterPhoneStep.module.scss';
-import { MainContext } from '../../../pages';
+ import { MainContext } from '../../../pages';
 
-// type InputValueState = {
-//   formattedValue: string;
-//   value: string;
-// };
+type InputValueState = {
+  formattedValue: string;
+  value: string;
+};
 
 export const EnterPhoneStep = () => {
-//   const { onNextStep } = React.useContext(MainContext);
-//   const [values, setValues] = React.useState<InputValueState>({} as InputValueState);
+  const { onNextStep } = React.useContext(MainContext);
+  const [values, setValues] = React.useState<InputValueState>({} as InputValueState);
 
-//   const nextDisabled = !values.formattedValue || values.formattedValue.includes('_');
+  const nextDisabled = !values.formattedValue || values.formattedValue.includes('_');
 
   return (
     <div className={styles.block}>
@@ -28,14 +28,14 @@ export const EnterPhoneStep = () => {
       />
       <WhiteBlock className={clsx('m-auto mt-30', styles.whiteBlock)}>
         <div className={clsx('mb-30', styles.input)}>
-          <img src="/static/russian-flag.png" alt="flag" width={24} />
+          <img src="/static/flag-ua.png" alt="flag" width={24} />
           <NumberFormat
             className="field"
-            format="+# (###) ###-##-##"
+            format="+### (##) ###-##-##"
             mask="_"
-            placeholder="+7 (999) 333-22-11"
-            // value={values.value}
-            // onValueChange={({ formattedValue, value }) => setValues({ formattedValue, value })}
+            placeholder="+380 (50) 809-81-82"
+            value={values.value}
+            onValueChange={({ formattedValue, value }) => setValues({ formattedValue, value })}
           />
         </div>
         <Button disabled={nextDisabled} onClick={onNextStep}>

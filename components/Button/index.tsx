@@ -3,13 +3,20 @@ import React from 'react';
 
 import styles from './Button.module.scss';
 
+interface ButtonProps {
+  disabled?: boolean,
+  color?: string,
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
+  className?: string
+}
+
 const colors = {
   green: styles.buttonGreen,
   gray: styles.buttonGray,
   blue: styles.buttonBlue,
 };
 
-export const Button = ({
+export const Button: React.FC<ButtonProps> = ({
   children,
   disabled,
   color,
