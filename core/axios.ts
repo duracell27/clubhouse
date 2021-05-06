@@ -3,8 +3,8 @@ import axios from 'axios';
 
 // const cookies = parseCookies();
 const instance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/',
-    withCredentials: true,
+    baseURL: 'http://localhost:3000/',
+ 
 })
 
 // const Axios = axios.create({
